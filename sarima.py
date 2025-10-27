@@ -7,7 +7,7 @@ from sklearn.metrics import mean_absolute_error
 # -----------------------------
 # 1. Load & clean data
 # -----------------------------
-df = pd.read_csv("wfp_food_prices_nga.csv", header=0, low_memory=False)
+df = pd.read_csv("wfp_food_prices_gha.csv", header=0, low_memory=False)
 df = df[df['date'] != '#date']
 df['market'] = df['market'].str.strip()
 df['commodity'] = df['commodity'].str.strip()
@@ -18,8 +18,8 @@ df = df.dropna(subset=['usdprice','date'])
 # -----------------------------
 # 2. Filter market & commodity
 # -----------------------------
-market = "Dawanau"
-commodity = "Maize (white)"
+market = "Kumasi"
+commodity = "Maize"
 data = df[(df['market'] == market) & (df['commodity'] == commodity)]
 
 if data.empty:
